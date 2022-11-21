@@ -2,18 +2,17 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 const { Kakao } = window;
 
-const KakaoShareButton = () => {
+const KakaoShareButton = ({ data }) => {
     const url = "https://catmbti21.netlify.app/"
     const resultUrl = window.location.href;
 
     React.useEffect(()=>{
       Kakao.cleanup();
       Kakao.init("8152154ad517e9a78e8847e701180057");
-      console.log(Kakao.isInitialized());
     }, []);
 
     const shareKakao = () => {
-      Kakao.Share.sendDefault({
+      Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
           title: '예비집사 판별기 결과',
@@ -37,7 +36,7 @@ const KakaoShareButton = () => {
     }
     
     return(
-        <Button style={{ fontFamily: "EF_jejudoldam", width: 170, marginLeft: '20px' }} >카카오톡 공유하기</Button>
+        <Button onClick={shareKakao} className="btn-warning" style={{ fontFamily: "EF_jejudoldam", width: 170, marginLeft: '20px' }} >카카오톡 공유하기</Button>
     )
 }
 

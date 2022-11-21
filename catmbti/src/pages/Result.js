@@ -5,6 +5,7 @@ import PangImage from '../assets/haz.jpg';
 import Button from 'react-bootstrap/Button';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultdata';
+import { ButtonGroup } from 'react-bootstrap';
 
 const Result = () => {
     const navigate = useNavigate();
@@ -29,7 +30,10 @@ const Result = () => {
                     <img src={resultData.image} className="rounded-circle" width={350} height={350}></img>
                 </LogoImage>
                 <Desc>예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다.</Desc>
-                <Button style={{ fontFamily: "EF_jejudoldam" }} onClick={() => navigate("/")}>테스트 다시하기</Button>
+                <ButtonGroup>
+                    <Button style={{ fontFamily: "EF_jejudoldam", width: 170 }} onClick={() => navigate("/")}>테스트 다시하기</Button>
+                    
+                </ButtonGroup>
             </Contents>
         </Wrapper>
     )

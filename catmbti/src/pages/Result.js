@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultdata';
 import { ButtonGroup } from 'react-bootstrap';
+import KakaoShareButton from '../component/KakaoShareButton';
 
 const Result = () => {
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Result = () => {
                 <Desc>예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다.</Desc>
                 <ButtonGroup>
                     <Button style={{ fontFamily: "EF_jejudoldam", width: 170 }} onClick={() => navigate("/")}>테스트 다시하기</Button>
-                    
+                    <KakaoShareButton />
                 </ButtonGroup>
             </Contents>
         </Wrapper>
